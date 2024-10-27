@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+PROJECT_DIR="$(cd -- "$(dirname "${BASH_SOURCE}")" ; cd .. > /dev/null 2>&1 && pwd -P)"
+cd  $PROJECT_DIR
+
+python3 -m venv .venv
+
+source .venv/bin/activate
+
+pip install --upgrade 'git+https://github.com/DrTom/pbcon@main'
